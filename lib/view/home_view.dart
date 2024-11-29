@@ -3,6 +3,8 @@ import 'package:weather_api/controller/temp_atual_controller.dart';
 import 'package:weather_api/model/temp_atual_model.dart';
 
 class HomeView extends StatefulWidget {
+  const HomeView({super.key});
+
   @override
   _HomeViewState createState() => _HomeViewState();
 }
@@ -29,7 +31,10 @@ class _HomeViewState extends State<HomeView> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(title: const Text('Clima Atual')),
+      appBar: AppBar(
+        title: const Text('Clima Atual'),
+        backgroundColor: Colors.white,
+      ),
       body: Center(
         child: _weatherData != null
             ? Container(
@@ -39,7 +44,7 @@ class _HomeViewState extends State<HomeView> {
                   borderRadius: BorderRadius.circular(10),
                   color: Colors.white,
                   border: Border.all(color: Colors.blue),
-                  boxShadow: [
+                  boxShadow: const [
                     BoxShadow(
                         color: Colors.blue, spreadRadius: 2, blurRadius: 50),
                   ],
